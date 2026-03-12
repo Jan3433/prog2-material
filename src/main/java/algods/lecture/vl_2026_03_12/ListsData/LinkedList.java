@@ -1,4 +1,4 @@
-package algods.lecture.vl_2026_03_12.Lists;
+package algods.lecture.vl_2026_03_12.ListsData;
 
 public class LinkedList implements List {
     Element anchor;
@@ -25,14 +25,14 @@ public class LinkedList implements List {
     }
 
     /// Hängt einen neuen Wert am Ende der Liste an.
-    public void add(int data) {
+    public void add(Data data) {
         this.anchor.insertBefore(data);
         this.size++;
     }
 
     /// Fügt ein neues Element mit dem gegebenen Wert an der gegeben Position in die
     /// Liste ein.
-    public void insert(int pos, int data) {
+    public void insert(int pos, Data data) {
         this.get(pos).insertBefore(data);
         this.size++;
     }
@@ -48,7 +48,14 @@ public class LinkedList implements List {
         this.size--;
     }
 
+    /// Liefert die Länge der Liste.
     public int size() {
         return this.size;
+    }
+
+    /// Liefert die Uhrzeit, zu der die Temperatur am höchsten ist.
+    public int getMaxTempTime() {
+        // TODO
+        return 0;
     }
 }

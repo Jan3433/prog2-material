@@ -51,7 +51,7 @@ public class ElementTest {
     }
 
     @Test
-    void testElement_removeBofore() {
+    void testElement_removeBefore() {
         Element anchor = new Element();
 
         anchor.insertBefore(42);
