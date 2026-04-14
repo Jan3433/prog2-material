@@ -36,14 +36,32 @@ public class Node {
 
     /// Liefert den Knoten mit dem gegebenen `key`.
     public Node get(int key) {
-        // TODO
-        return null;
+        if (this.isEmpty()) {
+            return null;
+        }
+
+        if (this.data == key) {
+            return this;
+        }
+
+        if (key < this.data) {
+            return this.left.get(key);
+        } else {
+            return this.right.get(key);
+        }
     }
 
     /// Liefert die Höhe des Baumes ab `this`.
     int height() {
-        // TODO
-        return 0;
+        if (this.isEmpty()) {
+            return 0;
+        }
+
+        int leftHeight = this.left.height();
+        int rightHeight = this.right.height();
+        int maxHeight = Math.max(leftHeight, rightHeight);
+
+        return maxHeight + 1;
     }
 
     public void printTree() {

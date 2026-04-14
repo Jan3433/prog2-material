@@ -30,6 +30,39 @@ public class NodeTest {
     }
 
     @Test
+    void Node_get() {
+        Node n = new Node();
+        assertEquals(null, n.get(0));
+
+        n.add(42);
+        assertEquals(n, n.get(42));
+
+        n.add(23);
+        n.add(75);
+        n.add(15);
+        n.add(38);
+        n.add(99);
+        assertEquals(n.left.left, n.get(15));
+    }
+
+    @Test
+    void Node_height() {
+        Node n = new Node();
+        n.add(42);
+        n.add(23);
+        n.add(75);
+        n.add(15);
+        n.add(38);
+        n.add(99);
+        n.add(5);
+        n.add(25);
+        n.add(23);
+        n.add(103);
+
+        assertEquals(5, n.height());
+    }
+
+    @Test
     void Node_printTree() {
         Node n = new Node();
         n.add(42);
